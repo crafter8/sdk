@@ -1,0 +1,24 @@
+services:
+  sdk-dev:
+    build:
+      context: .
+      dockerfile: docker/sdk-dev.Dockerfile
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+      - sdk-npm-cache:/home/node/.npm
+    environment:
+      NODE_ENV: development
+      GIT_SAFE_DIRECTORY: /workspace
+      GIT_TERMINAL_PROMPT: "0"
+      GIT_ASKPASS: /usr/local/bin/sdk-dev-git-askpass
+      CRAFTER8_SDK_GITHUB_PAT_TOKEN: ${CRAFTER8_SDK_GITHUB_PAT_TOKEN:-}
+      GITHUB_TOKEN: ${CRAFTER8_SDK_GITHUB_PAT_TOKEN:-}
+      GH_TOKEN: ${CRAFTER8_SDK_GITHUB_PAT_TOKEN:-}
+      CRAFTER8_SDK_GITHUB_REPO: ${CRAFTER8_SDK_GITHUB_REPO:-crafter8/sdk}
+    stdin_open: true
+    tty: true
+    command: bash -lc "sleep infinity"
+
+volumes:
+  sdk-npm-cache:
