@@ -26,7 +26,7 @@
     "apps"
   ],
   "bin": {
-    "crafter8-build": "./build.js"
+    "crafter8-build": "build.js"
   },
   "exports": {
     ".": {
