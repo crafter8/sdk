@@ -1,14 +1,8 @@
 {
-  "name": "@crafter8/sdk",
-  "version": "0.1.0-next.2",
-  "description": "Crafter8 artifact SDK for code-first app, module, and datapack declarations.",
-  "license": "MIT",
+  "name": "sdk-bin-smoke",
+  "version": "0.0.0",
+  "private": true,
   "type": "module",
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "publishConfig": {
-    "access": "public"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/crafter8/sdk.git"
@@ -16,46 +10,5 @@
   "homepage": "https://github.com/crafter8/sdk",
   "bugs": {
     "url": "https://github.com/crafter8/sdk/issues"
-  },
-  "keywords": [
-    "crafter8",
-    "sdk",
-    "artifacts",
-    "datapacks",
-    "modules",
-    "apps"
-  ],
-  "bin": {
-    "crafter8-build": "build.js"
-  },
-  "exports": {
-    ".": {
-      "types": "./index.d.ts",
-      "default": "./index.js"
-    },
-    "./mock": {
-      "types": "./mock.d.ts",
-      "default": "./mock.js"
-    },
-    "./react": {
-      "types": "./react.d.ts",
-      "default": "./react.js"
-    },
-    "./build": "./build.js",
-    "./package.json": "./package.json"
-  },
-  "files": [
-    "index.js",
-    "index.d.ts",
-    "mock.js",
-    "mock.d.ts",
-    "react.js",
-    "react.d.ts",
-    "build.js",
-    "LICENSE",
-    "README.md"
-  ],
-  "scripts": {
-    "test": "node --test ./test/**/*.test.mjs"
   }
 }

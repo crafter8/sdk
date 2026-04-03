@@ -544,7 +544,19 @@ async function main() {
   }
 }
 
-const isEntrypoint = import.meta.url === pathToFileURL(process.argv[1] || "").href;
+function resolveArgvEntrypointUrl(argvValue) {
+  if (!argvValue) {
+    return "";
+  }
+
+  try {
+    return pathToFileURL(fs.realpathSync(argvValue)).href;
+  } catch {
+    return pathToFileURL(path.resolve(argvValue)).href;
+  }
+}
+
+const isEntrypoint = import.meta.url === resolveArgvEntrypointUrl(process.argv[1]);
 if (isEntrypoint) {
   main().catch((error) => {
     console.error(`[crafter8-build] Failed: ${error instanceof Error ? error.message : String(error)}`);
