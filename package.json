@@ -1,6 +1,6 @@
 {
   "name": "@crafter8/sdk",
-  "version": "0.1.0-next.1",
+  "version": "0.1.0-next.2",
   "description": "Crafter8 artifact SDK for code-first app, module, and datapack declarations.",
   "license": "MIT",
   "type": "module",
